@@ -1,0 +1,13 @@
+def is_odd():
+    return lambda n: n % 2 != 0
+def is_prime():
+    return lambda n: n > 1 and all(n % i != 0 for i in range(2, int(n**0.5) + 1))
+def is_palindrome():
+    return lambda n: str(n) == str(n)[::-1]
+odd = is_odd()
+prime = is_prime()
+palindrome = is_palindrome()
+n = int(input("enter a number: "))
+print("is odd:", odd(n))
+print("is prime:", prime(n))
+print("is palindrome:", palindrome(n))
