@@ -1,0 +1,18 @@
+n = int(input())
+sales = {}
+order = []
+for _ in range(n):
+    category, item, amount = input().split()
+    amount = int(amount)
+
+    if category not in sales:
+        sales[category] = [amount, item, amount]
+        order.append(category)
+    else:
+        sales[category][0] += amount
+        if amount > sales[category][2]:
+            sales[category][1] = item
+            sales[category][2] = amount
+for category in order:
+    total, max_item, max_amount = sales[category]
+    print(category, total, max_item, max_amount)
