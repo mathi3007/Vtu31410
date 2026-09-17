@@ -1,0 +1,8 @@
+n = int(input())
+arr = list(map(int, input().split()))
+prefixSum = []
+total = 0
+for num in arr:
+    total += num
+    prefixSum.append(total)
+print(*prefixSum)
