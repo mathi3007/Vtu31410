@@ -1,0 +1,26 @@
+persons = [
+    {"name": "avinash", "age": 22},
+    {"name": "shreya", "age": 26},
+    {"name": "maha", "age": 19},
+    {"name": "fahid", "age": 28}
+]
+
+persons.sort(key=lambda p: p["name"])
+
+print("Sorted persons:")
+for person in persons:
+    print(person["name"], person["age"])
+
+limit = int(input("\nEnter age limit: "))
+
+older_persons = list(filter(lambda p: p["age"] > limit, persons))
+
+print("\nPersons older than", limit, ":")
+for person in older_persons:
+    print(person["name"], person["age"])
+
+upper_names = list(map(lambda p: p["name"].upper(), persons))
+
+print("\nNames in uppercase:")
+for name in upper_names:
+    print(name)
